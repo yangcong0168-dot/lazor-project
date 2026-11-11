@@ -2,35 +2,52 @@
 
 编辑器是一个独立的本地桌面窗口，用 Python 标准库 Tkinter 实现。
 界面与模拟无需网站或账户。自动求解使用本地 Z3 约束求解器，
-首次安装依赖后可离线运行。它生成课程要求的 **`.bff` 文件**；
+v1.0.1 平台运行包已带齐 Z3 及对应原生库，无需另行执行 `pip install`，
+解压后可离线运行。它生成课程要求的 **`.bff` 文件**；
 这里不另外定义 `.bif` 格式。
+
+**v1.0.0 运行 ZIP 漏带了 Z3。** 窗口可以启动不代表求解依赖已齐全，
+旧包在新电脑上可能无法执行约束求解。请从[最新 Release](https://github.com/yangcong0168-dot/lazor-project/releases/latest)
+下载 v1.0.1 对应平台包；[发布指南](release_zh.md)列出 Windows、macOS、Linux
+各自的 x64/ARM64 六个下载链接。`lazor-project-v1.0.1.zip` 兼容别名仅适用于 Windows x64。
 
 ## 启动
 
-在项目根目录双击 **`Launch Editor.cmd`**。
+Windows 用户可以在项目根目录双击 **`Launch Editor.cmd`**。
 启动器会寻找已有的 Python 3.10 或更新版本，并检查能否导入 Tkinter。
-建议使用项目已经验证过的 Python 3.12 运行环境，并通过 `python --version`
+对于带标记的完整运行包，它还会预检包内 Z3，跳过架构不匹配或无法加载依赖的解释器。
+推荐使用 Python 3.12，并通过 `python --version`
 确认命令指向的解释器。
 
-也可以在项目根目录运行：
+所有受支持平台也可以在项目根目录运行；若解释器命令叫 `python3`，请一致替换：
 
 ```powershell
 python -m lazor.editor
 python -m lazor.editor boards/mad_1.bff
 ```
 
-自动规划还需要 `requirements.txt` 中的 `z3-solver`。使用运行编辑器的同一个
-Python 安装依赖：
+平台包内的 `.deps` 必须保留，原生 Z3 架构要与 **Python 进程** 一致。
+例如 ARM 电脑运行 x64 Python 时应选 x64 包，运行 ARM64 Python 时才选 ARM64 包。
+macOS 包要求 macOS 13+；Linux x64 包要求 glibc 2.27+，Linux ARM64 包要求 glibc 2.38+。
+若安装了多个 Python，可手动使用匹配解释器运行上述命令，避免启动器选到其他架构。
+
+**只有源码下载或克隆需要自行安装求解依赖。** GitHub 自动生成的
+`Source code (zip)`/`Source code (tar.gz)` 没有附带 `.deps`，不能当作平台运行包。
+使用运行编辑器的同一个 Python 安装：
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-也可以按根目录 README 的说明，将依赖安装到项目自己的 `.deps` 目录。
+源码用户也可以按根目录 README 的说明，将依赖安装到项目自己的 `.deps` 目录。
 
-启动器不安装软件、不修改系统设置。其他电脑需要自己的 Python 3.10+，
+运行 ZIP 不包含 Python 解释器。启动器不安装软件、不修改系统设置，本机需要 Python 3.10+，
 并在安装 Python 时包含 Tcl/Tk 组件。若启动后没有窗口，可在终端使用上述
 命令查看错误信息。
+
+编辑器的 **约束规划求解** 仍使用 SMT，没有自动切换为 `search`。v1.0.1
+解压包的 SMT 与编辑器求解子进程验收范围，以本版 Release 的实际执行记录为准；
+历史 5,997/164 算法成绩不等于这次打包验证结果。
 
 ## 创建一个光路测试
 

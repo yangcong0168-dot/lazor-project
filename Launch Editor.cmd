@@ -14,8 +14,9 @@ if defined LAZOR_PYTHON goto launch
 for /f "delims=" %%P in ('where python3.exe 2^>nul') do call :try_python "%%P"
 if defined LAZOR_PYTHON goto launch
 
-echo A Python 3.10+ installation with tkinter could not be found.
-echo Install Python with Tcl/Tk support, or run this from a suitable Python:
+echo A compatible Python 3.10+ installation with tkinter could not be found.
+echo For a complete ZIP, Python must match the package architecture and Z3 must load.
+echo Install Python with Tcl/Tk support, or run this from a matching Python:
 echo     python -m lazor.editor
 echo See docs\editor_zh.md for details.
 popd
@@ -38,7 +39,7 @@ if defined LAZOR_PYTHON exit /b 0
 if not exist "%~1" exit /b 0
 rem Do not activate Microsoft Store application aliases.
 if /i "%~dp1"=="%LOCALAPPDATA%\Microsoft\WindowsApps\" exit /b 0
-"%~1" -c "import sys, tkinter; sys.exit(0 if sys.version_info >= (3, 10) else 1)" >nul 2>&1
+"%~1" -c "import sys; sys.exit(1) if sys.version_info < (3, 10) else None; import tkinter; from pathlib import Path; from lazor.dependencies import load_z3; load_z3() if Path('.deps/lazor_bundle.json').is_file() else None" >nul 2>&1
 if errorlevel 1 exit /b 0
 set "LAZOR_PYTHON=%~1"
 set "LAZOR_GUI=%~1"

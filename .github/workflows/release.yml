@@ -3,7 +3,13 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [VERSION]
+    paths:
+      - VERSION
+      - .github/workflows/release.yml
+      - scripts/build_release.py
+      - scripts/verify_release.py
+      - scripts/finalize_release.py
+      - lazor/dependencies.py
   workflow_dispatch:
 
 permissions:
@@ -17,32 +23,73 @@ jobs:
   test:
     uses: ./.github/workflows/tests.yml
 
-  publish:
+  build:
     needs: test
-    runs-on: windows-latest
+    name: Package and verify ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
-    permissions:
-      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {platform: windows-x64, os: windows-latest, architecture: x64, python: "3.12", extra: ""}
+          - {platform: windows-arm64, os: windows-11-arm, architecture: arm64, python: "3.13", extra: "--project-only"}
+          - {platform: macos-x64, os: macos-15-intel, architecture: x64, python: "3.12", extra: "--project-only"}
+          - {platform: macos-arm64, os: macos-15, architecture: arm64, python: "3.12", extra: "--project-only"}
+          - {platform: linux-x64, os: ubuntu-24.04, architecture: x64, python: "3.12", extra: "--project-only"}
+          - {platform: linux-arm64, os: ubuntu-24.04-arm, architecture: arm64, python: "3.12", extra: "--project-only"}
     env:
       PYTHONUTF8: "1"
       PYTHONUNBUFFERED: "1"
+      RELEASE_PLATFORM: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          architecture: ${{ matrix.architecture }}
+      - name: Build complete native dependency bundle and cache
+        run: python scripts/build_release.py --prepare-database --expected-platform ${{ matrix.platform }} ${{ matrix.extra }}
+      - name: Verify extracted ZIP with no installed packages
+        run: >-
+          python -c "import os,pathlib,subprocess,sys;
+          v=pathlib.Path('VERSION').read_text().strip(); p=os.environ['RELEASE_PLATFORM'];
+          subprocess.run([sys.executable,'scripts/verify_release.py',f'dist/lazor-project-v{v}-{p}.zip','--output',f'dist/verification-{p}.json'],check=True)"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-${{ matrix.platform }}
+          path: |
+            dist/*.zip
+            dist/verification-*.json
+          if-no-files-found: error
+          compression-level: 0
 
+  publish:
+    needs: build
+    runs-on: windows-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           architecture: x64
-
-      - name: Prepare release archives and optional cache
-        run: python scripts/build_release.py --prepare-database
-
-      - name: Smoke test the packaged search solver
-        run: python -m lazor boards/custom_test.bff --solve --algorithm search --timeout 10
-
-      - name: Publish version and checksum-verified assets
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: release-*
+          path: dist
+          merge-multiple: true
+      - name: Check all native verification reports and generate checksums
+        run: python scripts/finalize_release.py dist
+      - name: Publish complete verified release
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
@@ -50,11 +97,6 @@ jobs:
           RELEASE_TARGET: ${{ github.sha }}
         run: |
           $releaseVersion = (Get-Content -LiteralPath VERSION -Raw).Trim()
-          $releaseAssets = @(
-            "dist/lazor-project-v$releaseVersion.zip",
-            "dist/lazor-search-tables.zip",
-            "dist/lazor-validation.zip",
-            "dist/SHA256SUMS.txt"
-          )
+          $releaseAssets = @(Get-ChildItem -LiteralPath dist -File | ForEach-Object { $_.FullName })
           gh release create "v$releaseVersion" @releaseAssets --target $env:RELEASE_TARGET --title "Lazor Project v$releaseVersion" --notes-file docs/release_notes.md
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

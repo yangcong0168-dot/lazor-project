@@ -5,14 +5,13 @@ least source-reachable set of ray states. Strictly descending parent witnesses
 exclude unsupported cycles, while forward closure preserves real ray loops.
 """
 
-import importlib
-import sys
 from dataclasses import dataclass
 from math import ceil, isfinite
 from pathlib import Path
 from time import perf_counter
 from typing import Any, Literal
 
+from .dependencies import load_z3
 from .models import Puzzle
 from .simulation import SimulationResult, State, simulate
 
@@ -23,24 +22,8 @@ DIRECTIONS = ((-1, -1), (-1, 1), (1, -1), (1, 1))
 
 
 def _load_z3():
-    """Use installed Z3 or the project's explicitly installed .deps wheel."""
-    try:
-        module = importlib.import_module("z3")
-    except ModuleNotFoundError as exc:
-        if exc.name != "z3":
-            raise
-        local = Path(__file__).resolve().parents[1] / ".deps"
-        if not (local / "z3" / "__init__.py").is_file():
-            raise RuntimeError(
-                "Constraint solving requires z3-solver. Install it with "
-                "python -m pip install -r requirements.txt "
-                "(or add --target .deps for a project-local install)."
-            ) from exc
-        sys.path.insert(0, str(local))
-        module = importlib.import_module("z3")
-    if not hasattr(module, "Solver"):
-        raise RuntimeError("Install z3-solver, not the unrelated z3 package.")
-    return module
+    """Use the dependency loader shared by source and platform releases."""
+    return load_z3()
 
 
 @dataclass(frozen=True)

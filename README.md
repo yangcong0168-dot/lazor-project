@@ -1,9 +1,17 @@
 # Lazor Project
 
-The final optimized version (`v1.0.0`) reads Lazor `.bff` puzzles, solves block
+Lazor reads `.bff` puzzles, solves block
 placements, independently verifies the optical paths, and exports text, SVG,
 and replayable `.bff` files. Its optimized exact search selects strategies
 from the opening board and uses cached bit masks for batched reachability.
+
+**v1.0.1 corrects a packaging error:** the v1.0.0 runtime ZIP omitted Z3,
+despite being described as complete. Default SMT solving and the editor's
+solve action therefore needed an additional dependency installation.
+The v1.0.1 platform runtime ZIPs include `.deps` with the matching native Z3
+library and `data/search_tables.sqlite3`; they do not require `pip install`.
+You still need a compatible local Python 3.10+ installation (3.12 recommended)
+and Tk support for the editor. Start from the [latest release](https://github.com/yangcong0168-dot/lazor-project/releases/latest).
 
 **Select `--algorithm search` to use the final optimized search.** Running
 `--solve` without that option still uses Z3 SMT; the desktop editor also uses
@@ -13,10 +21,12 @@ SMT. Both solvers verify their answers with the independent simulator.
 python -m lazor boards/custom_test.bff --solve --algorithm search --timeout 10
 ```
 
-Final validation recorded **zero errors and zero timeouts** on the complete
-5,997-case matrix and 164 fresh-seed cases, with a one-second budget per case:
+The **v1.0.0 algorithm validation** recorded zero errors and zero timeouts
+on the complete 5,997-case matrix and 164 fresh-seed cases, with a one-second
+budget per case. These historical measurements are not a new v1.0.1 full-suite
+rerun; v1.0.1 addresses distribution and dependency packaging.
 
-| Evaluation | Previous version | Final version | Time reduction |
+| Evaluation | Previous algorithm | v1.0.0 optimized algorithm | Time reduction |
 | --- | ---: | ---: | ---: |
 | 5,997 cases, square sizes 4–44 and A/C inventories 4–10 | 57.8085 s | 36.2246 s | 37.34% |
 | 164 cases generated after the code was frozen | 2.0098 s | 1.3599 s | 32.34% |
@@ -26,31 +36,53 @@ for every puzzle. See [the final results, limits, and reproduction protocol](doc
 
 ## Release downloads
 
-Choose the named assets from this repository's release:
+Choose the runtime ZIP that matches your **Python process's operating system
+and architecture**, not just the computer's CPU:
 
-| Asset | Purpose |
+| Runtime ZIP | Python process / system requirement |
 | --- | --- |
-| [lazor-project-v1.0.0.zip](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/lazor-project-v1.0.0.zip) | Complete release bundle for running the project |
-| [lazor-search-tables.zip](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/lazor-search-tables.zip) | Optional precomputed SQLite tables; extract into the project root so the file is `data/search_tables.sqlite3` |
-| [lazor-validation.zip](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/lazor-validation.zip) | Validation records accompanying this release |
+| [windows-x64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-windows-x64.zip) | Windows, 64-bit x86 Python |
+| [windows-arm64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-windows-arm64.zip) | Windows, ARM64 Python |
+| [macos-x64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-macos-x64.zip) | macOS 13+, x86-64 Python |
+| [macos-arm64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-macos-arm64.zip) | macOS 13+, ARM64 Python |
+| [linux-x64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-linux-x64.zip) | Linux, x86-64 Python, glibc 2.27+ |
+| [linux-arm64](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1-linux-arm64.zip) | Linux, ARM64 Python, glibc 2.38+ |
 
-[Release v1.0.0](https://github.com/yangcong0168-dot/lazor-project/releases/tag/v1.0.0) · [Checksums](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/SHA256SUMS.txt)
+The compatibility filename [lazor-project-v1.0.1.zip](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/lazor-project-v1.0.1.zip)
+is the **Windows x64 package only**. All six platform packages include Z3 and
+the database. See the [latest release](https://github.com/yangcong0168-dot/lazor-project/releases/latest)
+and [v1.0.1 checksums](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.1/SHA256SUMS.txt).
 
-**The source works without the database.** Missing or incompatible tables
-fall back to ordinary computation. Historical `tmp/` and `outputs/` directories
-are not part of the source checkout. See [发布包与运行说明](docs/release_zh.md)
-for the package layout and setup.
+GitHub's automatic **Source code (zip)** and **Source code (tar.gz)** downloads
+are source-only archives, without bundled dependencies or the database.
+Clones have the same source-installation requirements below.
+Source users can optionally download the unchanged [database archive](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/lazor-search-tables.zip);
+the [v1.0.0 validation archive](https://github.com/yangcong0168-dot/lazor-project/releases/download/v1.0.0/lazor-validation.zip)
+contains the historical algorithm records.
+
+Search works without the database and falls back to ordinary computation
+for missing or incompatible tables. Historical `tmp/` and `outputs/`
+directories are not part of a source checkout. See [发布包与运行说明](docs/release_zh.md)
+for package selection, architecture matching, and setup.
 
 ## Requirements and setup
 
-- Python 3.10 or newer.
+- Python 3.10 or newer, with Python 3.12 recommended; the interpreter is
+  supplied by your computer, not by the ZIP.
 - Exact search, reading, simulation, and SVG output use the standard library.
-- SMT planning, including the editor's solve action, requires
-  `z3-solver==5.3.3.0` from `requirements.txt`.
+- SMT planning, including the editor's solve action, uses
+  `z3-solver==5.3.3.0`. Matching v1.0.1 runtime packages already include it
+  in `.deps`, including its native library.
 - The desktop editor requires Python's Tkinter/Tcl/Tk support.
 - Run commands from the project root.
 
-Install the planner dependency into your selected Python environment:
+**Runtime ZIP:** extract the whole package, including `.deps`, and run the
+commands below. No `pip` installation is needed. Native Z3 must match the
+Python process architecture; for example, an x86-64 Python running under
+Rosetta needs `macos-x64`, even on an Apple Silicon computer.
+
+**Source checkout or GitHub Source code archive:** install the SMT dependency
+into the Python environment you will use to run the program:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -62,10 +94,10 @@ Alternatively, keep the dependency local to this project:
 python -m pip install --only-binary=:all: --no-deps --target .deps -r requirements.txt
 ```
 
-The dependency loader also checks the local `.deps` folder, which is ignored
-by Git. Install the dependency when using SMT on a fresh checkout; the
-`search` algorithm does not require it. Use a Python 3.10+ environment and
-check the selected interpreter with `python --version`.
+The dependency loader checks the local `.deps` folder, which is included in
+platform runtime ZIPs and ignored by Git. The `search` algorithm does not
+require Z3. Check your interpreter with `python --version`; if its command
+is `python3`, use that command consistently for installation and execution.
 
 ## Quick start
 
@@ -102,8 +134,8 @@ python -m lazor.scaling run outputs/scaling_full/manifest.json --output outputs/
 The full suite covers every square size 4 through 44 and independent A/C
 counts 4 through 10. It contains 5,997 cases across planted open boards,
 obstacles/multiple sources, and analytically impossible parity controls.
-Ten over-capacity 4x4 inventory pairs are recorded as skipped. The current
-results are documented in [the final adaptive-search report](docs/adaptive_search_zh.md).
+Ten over-capacity 4x4 inventory pairs are recorded as skipped. The v1.0.0
+algorithm results are documented in [the adaptive-search report](docs/adaptive_search_zh.md).
 Full-matrix runs use a version-isolated persistent worker, independent solution
 replay, and append-only JSONL checkpoints:
 
@@ -114,8 +146,9 @@ python -m lazor.full_benchmark --manifest outputs/scaling_full/manifest.json --r
 Use a new output path for a changed solver or configuration. `--resume` accepts
 only the same code, input hashes and run parameters.
 
-For optional database acceleration, extract `lazor-search-tables.zip` into
-the project root. Search checks `data/search_tables.sqlite3` and loads tables
+The v1.0.1 runtime ZIPs already contain the database. Source users can extract
+`lazor-search-tables.zip` into the project root. Search checks
+`data/search_tables.sqlite3` and loads tables
 only when its opening policy uses them. Small boards and eligible bitboard
 boards skip full geometry-table decoding; unused tables stay on disk.
 Missing, incompatible or damaged records fall back to normal computation.
@@ -146,8 +179,8 @@ Targets, dynamic assignments, and solutions are kept local to each solve.
 
 ## Optimization history
 
-Read [the final adaptive-search report](docs/adaptive_search_zh.md) for this
-version's results. The following documents are retained in development order;
+Read [the adaptive-search report](docs/adaptive_search_zh.md) for the algorithm
+validation carried forward from v1.0.0. The following documents are retained in development order;
 each describes its own frozen baseline and measurements. Earlier timeout
 counts and timings do not describe the final release.
 
@@ -188,7 +221,8 @@ output's parent directory. Saved files use UTF-8.
 
 ## Desktop test editor
 
-Double-click `Launch Editor.cmd`, or run `python -m lazor.editor`. The optional
+On Windows, double-click `Launch Editor.cmd`. On any supported platform,
+run `python -m lazor.editor`. The optional
 argument `boards/mad_1.bff` opens an existing puzzle. Tkinter/Tcl/Tk must be
 installed with Python.
 
@@ -353,8 +387,11 @@ so their correctness and timing are not established by these local results.
 
 The development machine's historical `outputs/` and `tmp/` directories are
 ignored by Git and are not included in the source checkout. Older documents
-may reference artifacts from earlier solver versions. Use the release's
-`lazor-validation.zip` for its accompanying validation records,
-`lazor-project-v1.0.0.zip` for the complete release bundle, and
-`lazor-search-tables.zip` for the optional database. New output files can be
-generated locally using the commands above.
+may reference artifacts from earlier solver versions. Use the historical
+v1.0.0 `lazor-validation.zip` for the algorithm records,
+the matching `lazor-project-v1.0.1-<platform>.zip` for code, native Z3 and the
+database, and `lazor-search-tables.zip` when adding only the database to a
+source checkout. Packaged SMT/editor-worker validation for v1.0.1 is reported
+separately in its release notes; the historical 5,997/164 results are not
+claimed as a new run. New output files can be generated locally using the
+commands above.

@@ -591,7 +591,7 @@ class EditorApp:
         kind, payload = outcome
         if kind == "error":
             self.summary_var.set(f"运行失败\n{payload}")
-            self.status_var.set("运行失败，请检查关卡数据。")
+            self.status_var.set("运行失败，请查看上方错误说明。")
             return
         if kind == "solve":
             self.search = payload
