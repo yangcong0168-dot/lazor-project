@@ -1,0 +1,60 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths: [VERSION]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    uses: ./.github/workflows/tests.yml
+
+  publish:
+    needs: test
+    runs-on: windows-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      PYTHONUTF8: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          architecture: x64
+
+      - name: Prepare release archives and optional cache
+        run: python scripts/build_release.py --prepare-database
+
+      - name: Smoke test the packaged search solver
+        run: python -m lazor boards/custom_test.bff --solve --algorithm search --timeout 10
+
+      - name: Publish version and checksum-verified assets
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TARGET: ${{ github.sha }}
+        run: |
+          $releaseVersion = (Get-Content -LiteralPath VERSION -Raw).Trim()
+          $releaseAssets = @(
+            "dist/lazor-project-v$releaseVersion.zip",
+            "dist/lazor-search-tables.zip",
+            "dist/lazor-validation.zip",
+            "dist/SHA256SUMS.txt"
+          )
+          gh release create "v$releaseVersion" @releaseAssets --target $env:RELEASE_TARGET --title "Lazor Project v$releaseVersion" --notes-file docs/release_notes.md
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

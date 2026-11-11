@@ -1,0 +1,5 @@
+# Preserve the exact evaluated bytes used by validation SHA-256 records.
+# Disabling EOL conversion does not disable normal text diffs.
+* -text
+*.zip binary
+*.sqlite3 binary

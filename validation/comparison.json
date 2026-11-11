@@ -1,0 +1,1372 @@
+{
+  "full": {
+    "overall": {
+      "before": {
+        "attempted": 5997,
+        "status_counts": {
+          "solved": 3998,
+          "no_solution": 1999
+        },
+        "correct": 5997,
+        "timely_correct": 5997,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 57.80849259995739,
+        "par2_seconds": 0.009639568550935033,
+        "completed_p50": 0.0021890000061830506,
+        "completed_p90": 0.03432577999192293,
+        "completed_p95": 0.0402803800010588,
+        "completed_p99": 0.046238379993592385,
+        "completed_max": 0.2866435000032652,
+        "decisions": 3129869,
+        "ray_states": 108949852,
+        "restarts": {
+          "0": 5016,
+          "1": 978,
+          "3": 1,
+          "2": 2
+        }
+      },
+      "after": {
+        "attempted": 5997,
+        "status_counts": {
+          "solved": 3998,
+          "no_solution": 1999
+        },
+        "correct": 5997,
+        "timely_correct": 5997,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 36.22458490020654,
+        "par2_seconds": 0.0060404510422222,
+        "completed_p50": 0.001888900005724281,
+        "completed_p90": 0.01900246000441257,
+        "completed_p95": 0.025500640005338932,
+        "completed_p99": 0.03427135200239718,
+        "completed_max": 0.2909024000109639,
+        "decisions": 2575911,
+        "ray_states": 85943457,
+        "restarts": {
+          "0": 4510,
+          "1": 1484,
+          "3": 1,
+          "2": 2
+        }
+      },
+      "reduction_percent": 37.33691492202439
+    },
+    "satisfiable": {
+      "before": {
+        "attempted": 3998,
+        "status_counts": {
+          "solved": 3998
+        },
+        "correct": 3998,
+        "timely_correct": 3998,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 57.47300179980812,
+        "par2_seconds": 0.014375438169036548,
+        "completed_p50": 0.008797900001809467,
+        "completed_p90": 0.038142220002191606,
+        "completed_p95": 0.041938930002652336,
+        "completed_p99": 0.04820862699270943,
+        "completed_max": 0.2866435000032652,
+        "decisions": 3129869,
+        "ray_states": 108949852,
+        "restarts": {
+          "0": 3017,
+          "1": 978,
+          "3": 1,
+          "2": 2
+        }
+      },
+      "after": {
+        "attempted": 3998,
+        "status_counts": {
+          "solved": 3998
+        },
+        "correct": 3998,
+        "timely_correct": 3998,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 35.88647000056517,
+        "par2_seconds": 0.008976105552917751,
+        "completed_p50": 0.006369599999743514,
+        "completed_p90": 0.02290985999861734,
+        "completed_p95": 0.02900624999892895,
+        "completed_p99": 0.035658365000272155,
+        "completed_max": 0.2909024000109639,
+        "decisions": 2575911,
+        "ray_states": 85943457,
+        "restarts": {
+          "0": 2511,
+          "1": 1484,
+          "3": 1,
+          "2": 2
+        }
+      },
+      "reduction_percent": 37.55942985966503
+    },
+    "by_size_group": {
+      "4-8": {
+        "before": {
+          "attempted": 705,
+          "status_counts": {
+            "solved": 470,
+            "no_solution": 235
+          },
+          "correct": 705,
+          "timely_correct": 705,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 1.0973346001992468,
+          "par2_seconds": 0.0015565029790060238,
+          "completed_p50": 0.0002884999994421378,
+          "completed_p90": 0.0050950800010468875,
+          "completed_p95": 0.011441680003190412,
+          "completed_p99": 0.013483107991633006,
+          "completed_max": 0.023257900000317022,
+          "decisions": 351223,
+          "ray_states": 1416225,
+          "restarts": {
+            "0": 643,
+            "1": 62
+          }
+        },
+        "after": {
+          "attempted": 705,
+          "status_counts": {
+            "solved": 470,
+            "no_solution": 235
+          },
+          "correct": 705,
+          "timely_correct": 705,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 1.079081100106123,
+          "par2_seconds": 0.001530611489512231,
+          "completed_p50": 0.0002877999941119924,
+          "completed_p90": 0.004759279993595558,
+          "completed_p95": 0.011759699994581749,
+          "completed_p99": 0.013873224000562921,
+          "completed_max": 0.017291199997998774,
+          "decisions": 351223,
+          "ray_states": 1416225,
+          "restarts": {
+            "0": 643,
+            "1": 62
+          }
+        },
+        "reduction_percent": 1.663439764845609
+      },
+      "9-16": {
+        "before": {
+          "attempted": 1176,
+          "status_counts": {
+            "solved": 784,
+            "no_solution": 392
+          },
+          "correct": 1176,
+          "timely_correct": 1176,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 4.627883100110921,
+          "par2_seconds": 0.0039352747449922796,
+          "completed_p50": 0.0008644999979878776,
+          "completed_p90": 0.016561800002818927,
+          "completed_p95": 0.021547325006395113,
+          "completed_p99": 0.028281650000280933,
+          "completed_max": 0.2866435000032652,
+          "decisions": 870459,
+          "ray_states": 7825972,
+          "restarts": {
+            "0": 1013,
+            "1": 162,
+            "3": 1
+          }
+        },
+        "after": {
+          "attempted": 1176,
+          "status_counts": {
+            "solved": 784,
+            "no_solution": 392
+          },
+          "correct": 1176,
+          "timely_correct": 1176,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 4.8827903998608235,
+          "par2_seconds": 0.004152032652942877,
+          "completed_p50": 0.0008756000024732202,
+          "completed_p90": 0.01707525000529131,
+          "completed_p95": 0.023210375002236106,
+          "completed_p99": 0.03126439999323338,
+          "completed_max": 0.2909024000109639,
+          "decisions": 870459,
+          "ray_states": 7894262,
+          "restarts": {
+            "0": 1013,
+            "1": 162,
+            "3": 1
+          }
+        },
+        "reduction_percent": -5.508075598188578
+      },
+      "17-28": {
+        "before": {
+          "attempted": 1764,
+          "status_counts": {
+            "solved": 1176,
+            "no_solution": 588
+          },
+          "correct": 1764,
+          "timely_correct": 1764,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 12.469122199618141,
+          "par2_seconds": 0.007068663378468334,
+          "completed_p50": 0.003010849999554921,
+          "completed_p90": 0.030407599997124637,
+          "completed_p95": 0.03287300500232959,
+          "completed_p99": 0.03704877499956637,
+          "completed_max": 0.04125710000516847,
+          "decisions": 961355,
+          "ray_states": 24313098,
+          "restarts": {
+            "0": 1565,
+            "1": 199
+          }
+        },
+        "after": {
+          "attempted": 1764,
+          "status_counts": {
+            "solved": 1176,
+            "no_solution": 588
+          },
+          "correct": 1764,
+          "timely_correct": 1764,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 11.474978900165297,
+          "par2_seconds": 0.006505090079458785,
+          "completed_p50": 0.002436300004774239,
+          "completed_p90": 0.02769574000121793,
+          "completed_p95": 0.03201480000134324,
+          "completed_p99": 0.03740442399604944,
+          "completed_max": 0.044780600001104176,
+          "decisions": 920044,
+          "ray_states": 25953167,
+          "restarts": {
+            "0": 1557,
+            "1": 207
+          }
+        },
+        "reduction_percent": 7.972841099297989
+      },
+      "29-44": {
+        "before": {
+          "attempted": 2352,
+          "status_counts": {
+            "solved": 1568,
+            "no_solution": 784
+          },
+          "correct": 2352,
+          "timely_correct": 2352,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 39.61415270002908,
+          "par2_seconds": 0.016842751998311683,
+          "completed_p50": 0.012897399996290915,
+          "completed_p90": 0.04134595999785234,
+          "completed_p95": 0.044045689997437874,
+          "completed_p99": 0.050056889992411015,
+          "completed_max": 0.126634300002479,
+          "decisions": 946832,
+          "ray_states": 75394557,
+          "restarts": {
+            "0": 1795,
+            "1": 555,
+            "2": 2
+          }
+        },
+        "after": {
+          "attempted": 2352,
+          "status_counts": {
+            "solved": 1568,
+            "no_solution": 784
+          },
+          "correct": 2352,
+          "timely_correct": 2352,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 18.787734500074293,
+          "par2_seconds": 0.007987982355473764,
+          "completed_p50": 0.007229199996800162,
+          "completed_p90": 0.01938874999905238,
+          "completed_p95": 0.022730595005850764,
+          "completed_p99": 0.029434739995631367,
+          "completed_max": 0.08925810000800993,
+          "decisions": 434185,
+          "ray_states": 50679803,
+          "restarts": {
+            "0": 1297,
+            "1": 1053,
+            "2": 2
+          }
+        },
+        "reduction_percent": 52.57317594966382
+      }
+    },
+    "by_family": {
+      "obstacles": {
+        "before": {
+          "attempted": 1999,
+          "status_counts": {
+            "solved": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 30.28997859978699,
+          "par2_seconds": 0.015152565582684838,
+          "completed_p50": 0.00948439999774564,
+          "completed_p90": 0.03977316000091378,
+          "completed_p95": 0.0428067100001499,
+          "completed_p99": 0.04881144799670437,
+          "completed_max": 0.2866435000032652,
+          "decisions": 1552053,
+          "ray_states": 55667511,
+          "restarts": {
+            "0": 1514,
+            "1": 482,
+            "3": 1,
+            "2": 2
+          }
+        },
+        "after": {
+          "attempted": 1999,
+          "status_counts": {
+            "solved": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 16.502118700329447,
+          "par2_seconds": 0.008255186943636542,
+          "completed_p50": 0.006624500005273148,
+          "completed_p90": 0.01562264000240248,
+          "completed_p95": 0.030704549999791185,
+          "completed_p99": 0.037908731997886205,
+          "completed_max": 0.2909024000109639,
+          "decisions": 1107773,
+          "ray_states": 24565120,
+          "restarts": {
+            "0": 1061,
+            "1": 935,
+            "3": 1,
+            "2": 2
+          }
+        },
+        "reduction_percent": 45.51954321801504
+      },
+      "open": {
+        "before": {
+          "attempted": 1999,
+          "status_counts": {
+            "solved": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 27.183023200021125,
+          "par2_seconds": 0.013598310755388256,
+          "completed_p50": 0.008171599998604506,
+          "completed_p90": 0.03659004000073764,
+          "completed_p95": 0.04103770000510849,
+          "completed_p99": 0.04732518599950707,
+          "completed_max": 0.062131200000294484,
+          "decisions": 1577816,
+          "ray_states": 53282341,
+          "restarts": {
+            "0": 1503,
+            "1": 496
+          }
+        },
+        "after": {
+          "attempted": 1999,
+          "status_counts": {
+            "solved": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 19.38435130023572,
+          "par2_seconds": 0.00969702416219896,
+          "completed_p50": 0.005809499998576939,
+          "completed_p90": 0.024806639991584233,
+          "completed_p95": 0.028653869994741395,
+          "completed_p99": 0.03267468199977884,
+          "completed_max": 0.043152300000656396,
+          "decisions": 1468138,
+          "ray_states": 61378337,
+          "restarts": {
+            "0": 1450,
+            "1": 549
+          }
+        },
+        "reduction_percent": 28.689494330341237
+      },
+      "parity_unsat": {
+        "before": {
+          "attempted": 1999,
+          "status_counts": {
+            "no_solution": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.3354908001492731,
+          "par2_seconds": 0.00016782931473200257,
+          "completed_p50": 0.00014730000111740083,
+          "completed_p90": 0.00031582000083290045,
+          "completed_p95": 0.000344850005058106,
+          "completed_p99": 0.00039716599683742965,
+          "completed_max": 0.0009796999947866425,
+          "decisions": 0,
+          "ray_states": 0,
+          "restarts": {
+            "0": 1999
+          }
+        },
+        "after": {
+          "attempted": 1999,
+          "status_counts": {
+            "no_solution": 1999
+          },
+          "correct": 1999,
+          "timely_correct": 1999,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.33811489964136854,
+          "par2_seconds": 0.0001691420208310998,
+          "completed_p50": 0.00016490000416524708,
+          "completed_p90": 0.00030127999489195647,
+          "completed_p95": 0.00032875000033527607,
+          "completed_p99": 0.0003631079997285269,
+          "completed_max": 0.0009452999947825447,
+          "decisions": 0,
+          "ray_states": 0,
+          "restarts": {
+            "0": 1999
+          }
+        },
+        "reduction_percent": -0.7821673473394242
+      }
+    },
+    "transitions": {
+      "solved -> solved": 3998,
+      "no_solution -> no_solution": 1999
+    },
+    "new_timeouts": [],
+    "errors": [],
+    "strategies": {
+      "small_memory": 470,
+      "parity_reject": 1999,
+      "scalar_conservative": 686,
+      "medium_batch": 1372,
+      "large_open_batch": 735,
+      "large_constrained_guided": 735
+    },
+    "bitboard_cases": 2842,
+    "bitboard_cache_hits": 2813,
+    "batch_iterations": 1297311,
+    "batch_setup_seconds": 1.2715260995028075,
+    "slower_count": 2225,
+    "slower_over_5ms": 36,
+    "regressions": [
+      {
+        "case": "n24_a06_c06_obstacles",
+        "before": 0.01649389999511186,
+        "after": 0.031965699992724694,
+        "before_nodes": 4119,
+        "after_nodes": 4119,
+        "before_rays": 13685,
+        "after_rays": 13384,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n27_a09_c08_open",
+        "before": 0.027991599999950267,
+        "after": 0.043152300000656396,
+        "before_nodes": 2960,
+        "after_nodes": 2960,
+        "before_rays": 41769,
+        "after_rays": 62802,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n24_a10_c04_open",
+        "before": 0.019444299992755987,
+        "after": 0.0334593000006862,
+        "before_nodes": 1957,
+        "after_nodes": 1957,
+        "before_rays": 32823,
+        "after_rays": 60532,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n27_a07_c05_obstacles",
+        "before": 0.023221399998874404,
+        "after": 0.03560950000246521,
+        "before_nodes": 2247,
+        "after_nodes": 1858,
+        "before_rays": 35585,
+        "after_rays": 69468,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n21_a09_c10_obstacles",
+        "before": 0.032995400004438125,
+        "after": 0.04462549999880139,
+        "before_nodes": 3961,
+        "after_nodes": 4121,
+        "before_rays": 67093,
+        "after_rays": 55468,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n32_a08_c04_open",
+        "before": 0.01491369999712333,
+        "after": 0.02624600000854116,
+        "before_nodes": 1089,
+        "after_nodes": 991,
+        "before_rays": 21057,
+        "after_rays": 71334,
+        "strategy": "large_open_batch"
+      },
+      {
+        "case": "n21_a06_c04_obstacles",
+        "before": 0.03318169999693055,
+        "after": 0.04422609999892302,
+        "before_nodes": 2128,
+        "after_nodes": 2156,
+        "before_rays": 67273,
+        "after_rays": 66699,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n43_a08_c05_open",
+        "before": 0.014776700001675636,
+        "after": 0.025213299988536164,
+        "before_nodes": 423,
+        "after_nodes": 525,
+        "before_rays": 24790,
+        "after_rays": 104477,
+        "strategy": "large_open_batch"
+      },
+      {
+        "case": "n18_a08_c08_obstacles",
+        "before": 0.031040999994729646,
+        "after": 0.04135229998792056,
+        "before_nodes": 4117,
+        "after_nodes": 4117,
+        "before_rays": 63134,
+        "after_rays": 63171,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n25_a09_c08_open",
+        "before": 0.019720199998118915,
+        "after": 0.029632499994477257,
+        "before_nodes": 2222,
+        "after_nodes": 2222,
+        "before_rays": 30406,
+        "after_rays": 60625,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n21_a07_c04_obstacles",
+        "before": 0.02379369999107439,
+        "after": 0.03250530001241714,
+        "before_nodes": 2901,
+        "after_nodes": 2901,
+        "before_rays": 39278,
+        "after_rays": 57904,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n41_a06_c08_open",
+        "before": 0.019059199999901466,
+        "after": 0.027396799996495247,
+        "before_nodes": 583,
+        "after_nodes": 659,
+        "before_rays": 34065,
+        "after_rays": 94174,
+        "strategy": "large_open_batch"
+      },
+      {
+        "case": "n22_a08_c08_obstacles",
+        "before": 0.03657989999919664,
+        "after": 0.044780600001104176,
+        "before_nodes": 2659,
+        "after_nodes": 3219,
+        "before_rays": 75870,
+        "after_rays": 74387,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n18_a09_c10_obstacles",
+        "before": 0.028553500000271015,
+        "after": 0.03654929999902379,
+        "before_nodes": 4112,
+        "after_nodes": 4112,
+        "before_rays": 57799,
+        "after_rays": 56476,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n16_a09_c10_obstacles",
+        "before": 0.025301100002252497,
+        "after": 0.03302219999022782,
+        "before_nodes": 4117,
+        "after_nodes": 4117,
+        "before_rays": 48549,
+        "after_rays": 48558,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n16_a10_c10_obstacles",
+        "before": 0.02495890000136569,
+        "after": 0.03244540000741836,
+        "before_nodes": 4133,
+        "after_nodes": 4133,
+        "before_rays": 48703,
+        "after_rays": 48216,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n25_a10_c10_obstacles",
+        "before": 0.013882999992347322,
+        "after": 0.02073930000187829,
+        "before_nodes": 1242,
+        "after_nodes": 1242,
+        "before_rays": 22900,
+        "after_rays": 42961,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n09_a04_c04_open",
+        "before": 0.0008368999988306314,
+        "after": 0.007387500008917414,
+        "before_nodes": 72,
+        "after_nodes": 72,
+        "before_rays": 503,
+        "after_rays": 503,
+        "strategy": "scalar_conservative"
+      },
+      {
+        "case": "n23_a07_c09_obstacles",
+        "before": 0.03010099999664817,
+        "after": 0.036612900003092363,
+        "before_nodes": 2901,
+        "after_nodes": 2901,
+        "before_rays": 51619,
+        "after_rays": 53659,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "n23_a09_c08_open",
+        "before": 0.013066700004856102,
+        "after": 0.019533900005626492,
+        "before_nodes": 1636,
+        "after_nodes": 1636,
+        "before_rays": 22178,
+        "after_rays": 40367,
+        "strategy": "medium_batch"
+      }
+    ]
+  },
+  "fresh": {
+    "overall": {
+      "before": {
+        "attempted": 164,
+        "status_counts": {
+          "solved": 110,
+          "no_solution": 54
+        },
+        "correct": 164,
+        "timely_correct": 164,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 2.0097827000863617,
+        "par2_seconds": 0.012254772561502206,
+        "completed_p50": 0.005425950002972968,
+        "completed_p90": 0.0393286799968337,
+        "completed_p95": 0.044225940000615076,
+        "completed_p99": 0.057388649004715304,
+        "completed_max": 0.06449189998966176,
+        "decisions": 112846,
+        "ray_states": 3398347,
+        "restarts": {
+          "0": 127,
+          "1": 37
+        }
+      },
+      "after": {
+        "attempted": 164,
+        "status_counts": {
+          "solved": 110,
+          "no_solution": 54
+        },
+        "correct": 164,
+        "timely_correct": 164,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 1.3598728000361007,
+        "par2_seconds": 0.008291907317293297,
+        "completed_p50": 0.0038189500046428293,
+        "completed_p90": 0.02646932000061498,
+        "completed_p95": 0.031152529998507816,
+        "completed_p99": 0.0354900229931809,
+        "completed_max": 0.042153100002906285,
+        "decisions": 97900,
+        "ray_states": 2749193,
+        "restarts": {
+          "0": 114,
+          "1": 50
+        }
+      },
+      "reduction_percent": 32.3373218419252
+    },
+    "satisfiable": {
+      "before": {
+        "attempted": 110,
+        "status_counts": {
+          "solved": 110
+        },
+        "correct": 110,
+        "timely_correct": 110,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 2.0006002000300214,
+        "par2_seconds": 0.018187274545727466,
+        "completed_p50": 0.011331100002280436,
+        "completed_p90": 0.04156317999877502,
+        "completed_p95": 0.04866913999940152,
+        "completed_p99": 0.062090807000204196,
+        "completed_max": 0.06449189998966176,
+        "decisions": 112846,
+        "ray_states": 3398347,
+        "restarts": {
+          "0": 73,
+          "1": 37
+        }
+      },
+      "after": {
+        "attempted": 110,
+        "status_counts": {
+          "solved": 110
+        },
+        "correct": 110,
+        "timely_correct": 110,
+        "wrong": 0,
+        "hard_timeouts": 0,
+        "algorithm_seconds_observed": 1.3507493999350118,
+        "par2_seconds": 0.012279539999409199,
+        "completed_p50": 0.008970700000645593,
+        "completed_p90": 0.029975530001684094,
+        "completed_p95": 0.03216991500012227,
+        "completed_p99": 0.035672488999553026,
+        "completed_max": 0.042153100002906285,
+        "decisions": 97900,
+        "ray_states": 2749193,
+        "restarts": {
+          "0": 60,
+          "1": 50
+        }
+      },
+      "reduction_percent": 32.48279191840818
+    },
+    "by_size_group": {
+      "4-8": {
+        "before": {
+          "attempted": 20,
+          "status_counts": {
+            "solved": 14,
+            "no_solution": 6
+          },
+          "correct": 20,
+          "timely_correct": 20,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.07301040002494119,
+          "par2_seconds": 0.0036505200012470597,
+          "completed_p50": 0.0005592000088654459,
+          "completed_p90": 0.011790690002089833,
+          "completed_p95": 0.012080229999992299,
+          "completed_p99": 0.012433326001191744,
+          "completed_max": 0.012521600001491606,
+          "decisions": 22075,
+          "ray_states": 83286,
+          "restarts": {
+            "0": 15,
+            "1": 5
+          }
+        },
+        "after": {
+          "attempted": 20,
+          "status_counts": {
+            "solved": 14,
+            "no_solution": 6
+          },
+          "correct": 20,
+          "timely_correct": 20,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.06549659997108392,
+          "par2_seconds": 0.0032748299985541963,
+          "completed_p50": 0.0004221500057610683,
+          "completed_p90": 0.011447119992226362,
+          "completed_p95": 0.011605414999212372,
+          "completed_p99": 0.012845962989522374,
+          "completed_max": 0.013156099987099878,
+          "decisions": 22075,
+          "ray_states": 83286,
+          "restarts": {
+            "0": 15,
+            "1": 5
+          }
+        },
+        "reduction_percent": 10.291410609023465
+      },
+      "9-16": {
+        "before": {
+          "attempted": 32,
+          "status_counts": {
+            "no_solution": 11,
+            "solved": 21
+          },
+          "correct": 32,
+          "timely_correct": 32,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.1555213000247022,
+          "par2_seconds": 0.004860040625771944,
+          "completed_p50": 0.001222850005433429,
+          "completed_p90": 0.016606940004567156,
+          "completed_p95": 0.01899924999597715,
+          "completed_p99": 0.027938479997101254,
+          "completed_max": 0.03152889999910258,
+          "decisions": 30732,
+          "ray_states": 254661,
+          "restarts": {
+            "0": 27,
+            "1": 5
+          }
+        },
+        "after": {
+          "attempted": 32,
+          "status_counts": {
+            "no_solution": 11,
+            "solved": 21
+          },
+          "correct": 32,
+          "timely_correct": 32,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.16530700003204402,
+          "par2_seconds": 0.0051658437510013755,
+          "completed_p50": 0.001265649996639695,
+          "completed_p90": 0.018416210003488236,
+          "completed_p95": 0.020396695001545593,
+          "completed_p99": 0.02805401399949916,
+          "completed_max": 0.03119449999940116,
+          "decisions": 30732,
+          "ray_states": 260002,
+          "restarts": {
+            "0": 27,
+            "1": 5
+          }
+        },
+        "reduction_percent": -6.292192777315697
+      },
+      "17-28": {
+        "before": {
+          "attempted": 48,
+          "status_counts": {
+            "solved": 32,
+            "no_solution": 16
+          },
+          "correct": 48,
+          "timely_correct": 48,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.45030359998054337,
+          "par2_seconds": 0.009381324999594653,
+          "completed_p50": 0.005702349997591227,
+          "completed_p90": 0.03319238999392838,
+          "completed_p95": 0.03724300499379751,
+          "completed_p99": 0.038104920996265716,
+          "completed_max": 0.0383049999945797,
+          "decisions": 33060,
+          "ray_states": 797046,
+          "restarts": {
+            "1": 7,
+            "0": 41
+          }
+        },
+        "after": {
+          "attempted": 48,
+          "status_counts": {
+            "solved": 32,
+            "no_solution": 16
+          },
+          "correct": 48,
+          "timely_correct": 48,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.3927174000564264,
+          "par2_seconds": 0.00818161250117555,
+          "completed_p50": 0.0042508000042289495,
+          "completed_p90": 0.029255950008518997,
+          "completed_p95": 0.03169235500317882,
+          "completed_p99": 0.0347752610022144,
+          "completed_max": 0.035702900000615045,
+          "decisions": 31078,
+          "ray_states": 831159,
+          "restarts": {
+            "1": 7,
+            "0": 41
+          }
+        },
+        "reduction_percent": 12.788305473597173
+      },
+      "29-44": {
+        "before": {
+          "attempted": 64,
+          "status_counts": {
+            "solved": 43,
+            "no_solution": 21
+          },
+          "correct": 64,
+          "timely_correct": 64,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 1.330947400056175,
+          "par2_seconds": 0.020796053125877734,
+          "completed_p50": 0.017351299997244496,
+          "completed_p90": 0.04787911000748864,
+          "completed_p95": 0.05332238000264622,
+          "completed_p99": 0.06347293799582984,
+          "completed_max": 0.06449189998966176,
+          "decisions": 26979,
+          "ray_states": 2263354,
+          "restarts": {
+            "0": 44,
+            "1": 20
+          }
+        },
+        "after": {
+          "attempted": 64,
+          "status_counts": {
+            "solved": 43,
+            "no_solution": 21
+          },
+          "correct": 64,
+          "timely_correct": 64,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.7363517999765463,
+          "par2_seconds": 0.011505496874633536,
+          "completed_p50": 0.008886699994036462,
+          "completed_p90": 0.02772715000319295,
+          "completed_p95": 0.03213002999546005,
+          "completed_p99": 0.03787659699402864,
+          "completed_max": 0.042153100002906285,
+          "decisions": 14015,
+          "ray_states": 1574746,
+          "restarts": {
+            "0": 31,
+            "1": 33
+          }
+        },
+        "reduction_percent": 44.67461299030545
+      }
+    },
+    "by_family": {
+      "obstacles": {
+        "before": {
+          "attempted": 55,
+          "status_counts": {
+            "solved": 55
+          },
+          "correct": 55,
+          "timely_correct": 55,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.9192634000064572,
+          "par2_seconds": 0.016713880000117403,
+          "completed_p50": 0.011338199998135678,
+          "completed_p90": 0.039076040001236836,
+          "completed_p95": 0.04612953000178093,
+          "completed_p99": 0.058749755996104804,
+          "completed_max": 0.06449189998966176,
+          "decisions": 46917,
+          "ray_states": 1531722,
+          "restarts": {
+            "0": 40,
+            "1": 15
+          }
+        },
+        "after": {
+          "attempted": 55,
+          "status_counts": {
+            "solved": 55
+          },
+          "correct": 55,
+          "timely_correct": 55,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.5498291999683715,
+          "par2_seconds": 0.009996894544879483,
+          "completed_p50": 0.008300699992105365,
+          "completed_p90": 0.019339819994638675,
+          "completed_p95": 0.030676439999660937,
+          "completed_p99": 0.0346371020024526,
+          "completed_max": 0.035702900000615045,
+          "decisions": 35353,
+          "ray_states": 758762,
+          "restarts": {
+            "0": 28,
+            "1": 27
+          }
+        },
+        "reduction_percent": 40.18806797219281
+      },
+      "open": {
+        "before": {
+          "attempted": 55,
+          "status_counts": {
+            "solved": 55
+          },
+          "correct": 55,
+          "timely_correct": 55,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 1.0813368000235641,
+          "par2_seconds": 0.01966066909133753,
+          "completed_p50": 0.011163800008944236,
+          "completed_p90": 0.04306480000377633,
+          "completed_p95": 0.04852294000302208,
+          "completed_p99": 0.05817234200396343,
+          "completed_max": 0.06287449999945238,
+          "decisions": 65929,
+          "ray_states": 1866625,
+          "restarts": {
+            "0": 33,
+            "1": 22
+          }
+        },
+        "after": {
+          "attempted": 55,
+          "status_counts": {
+            "solved": 55
+          },
+          "correct": 55,
+          "timely_correct": 55,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.8009201999666402,
+          "par2_seconds": 0.014562185453938913,
+          "completed_p50": 0.01141490000009071,
+          "completed_p90": 0.031092079996597022,
+          "completed_p95": 0.03275424000166822,
+          "completed_p99": 0.038487525995296895,
+          "completed_max": 0.042153100002906285,
+          "decisions": 62547,
+          "ray_states": 1990431,
+          "restarts": {
+            "0": 32,
+            "1": 23
+          }
+        },
+        "reduction_percent": 25.932401454460184
+      },
+      "parity_unsat": {
+        "before": {
+          "attempted": 54,
+          "status_counts": {
+            "no_solution": 54
+          },
+          "correct": 54,
+          "timely_correct": 54,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.00918250005634036,
+          "par2_seconds": 0.0001700462973396363,
+          "completed_p50": 0.00014980000560171902,
+          "completed_p90": 0.00033552000240888463,
+          "completed_p95": 0.0003953350002120713,
+          "completed_p99": 0.00043205599708016955,
+          "completed_max": 0.0004557999927783385,
+          "decisions": 0,
+          "ray_states": 0,
+          "restarts": {
+            "0": 54
+          }
+        },
+        "after": {
+          "attempted": 54,
+          "status_counts": {
+            "no_solution": 54
+          },
+          "correct": 54,
+          "timely_correct": 54,
+          "wrong": 0,
+          "hard_timeouts": 0,
+          "algorithm_seconds_observed": 0.009123400101088919,
+          "par2_seconds": 0.00016895185372386886,
+          "completed_p50": 0.0001408500029356219,
+          "completed_p90": 0.00034940000768983736,
+          "completed_p95": 0.00037920999311609157,
+          "completed_p99": 0.0004752160092175472,
+          "completed_max": 0.0005244000058155507,
+          "decisions": 0,
+          "ray_states": 0,
+          "restarts": {
+            "0": 54
+          }
+        },
+        "reduction_percent": 0.6436150818276642
+      }
+    },
+    "transitions": {
+      "solved -> solved": 110,
+      "no_solution -> no_solution": 54
+    },
+    "new_timeouts": [],
+    "errors": [],
+    "strategies": {
+      "small_memory": 14,
+      "parity_reject": 54,
+      "scalar_conservative": 18,
+      "medium_batch": 38,
+      "large_open_batch": 20,
+      "large_constrained_guided": 20
+    },
+    "bitboard_cases": 78,
+    "bitboard_cache_hits": 49,
+    "batch_iterations": 41121,
+    "batch_setup_seconds": 0.06437870008812752,
+    "slower_count": 53,
+    "slower_over_5ms": 2,
+    "regressions": [
+      {
+        "case": "h145_n40_a06_c05_obstacles",
+        "before": 0.008253500011051074,
+        "after": 0.018175099990912713,
+        "before_nodes": 138,
+        "after_nodes": 55,
+        "before_rays": 12101,
+        "after_rays": 12023,
+        "strategy": "large_constrained_guided"
+      },
+      {
+        "case": "h021_n09_a06_c04_open",
+        "before": 0.013639099997817539,
+        "after": 0.02106389999971725,
+        "before_nodes": 4117,
+        "after_nodes": 4117,
+        "before_rays": 20712,
+        "after_rays": 20712,
+        "strategy": "scalar_conservative"
+      },
+      {
+        "case": "h051_n16_a08_c10_open",
+        "before": 0.008202900004107505,
+        "after": 0.012461899998015724,
+        "before_nodes": 1871,
+        "after_nodes": 1871,
+        "before_rays": 13234,
+        "after_rays": 18537,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h076_n23_a06_c08_obstacles",
+        "before": 0.0142070000001695,
+        "after": 0.017575100006069988,
+        "before_nodes": 1020,
+        "after_nodes": 1020,
+        "before_rays": 19489,
+        "after_rays": 28457,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h061_n19_a05_c05_obstacles",
+        "before": 0.007988500001374632,
+        "after": 0.01080299999739509,
+        "before_nodes": 1387,
+        "after_nodes": 1387,
+        "before_rays": 12607,
+        "after_rays": 14204,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h052_n17_a04_c06_obstacles",
+        "before": 0.03159840000444092,
+        "after": 0.03372920000401791,
+        "before_nodes": 4129,
+        "after_nodes": 4129,
+        "before_rays": 58641,
+        "after_rays": 62308,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h058_n18_a04_c10_obstacles",
+        "before": 0.005621099990094081,
+        "after": 0.007209299990790896,
+        "before_nodes": 1327,
+        "after_nodes": 1327,
+        "before_rays": 8199,
+        "after_rays": 7939,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h108_n31_a07_c06_open",
+        "before": 0.040796799992676824,
+        "after": 0.042153100002906285,
+        "before_nodes": 1450,
+        "after_nodes": 1418,
+        "before_rays": 70011,
+        "after_rays": 67699,
+        "strategy": "large_open_batch"
+      },
+      {
+        "case": "h100_n29_a08_c10_obstacles",
+        "before": 0.015652700007194653,
+        "after": 0.01689020000048913,
+        "before_nodes": 719,
+        "after_nodes": 719,
+        "before_rays": 21261,
+        "after_rays": 36129,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h007_n05_a07_c04_obstacles",
+        "before": 0.00033680000342428684,
+        "after": 0.001021399992168881,
+        "before_nodes": 54,
+        "after_nodes": 54,
+        "before_rays": 268,
+        "after_rays": 268,
+        "strategy": "small_memory"
+      },
+      {
+        "case": "h018_n08_a05_c09_open",
+        "before": 0.012521600001491606,
+        "after": 0.013156099987099878,
+        "before_nodes": 4111,
+        "after_nodes": 4111,
+        "before_rays": 19294,
+        "after_rays": 19294,
+        "strategy": "small_memory"
+      },
+      {
+        "case": "h033_n12_a07_c05_open",
+        "before": 0.00922750000609085,
+        "after": 0.009807499998714775,
+        "before_nodes": 1804,
+        "after_nodes": 1804,
+        "before_rays": 16834,
+        "after_rays": 16834,
+        "strategy": "scalar_conservative"
+      },
+      {
+        "case": "h117_n33_a08_c05_open",
+        "before": 0.03419730000314303,
+        "after": 0.03459929999371525,
+        "before_nodes": 1257,
+        "after_nodes": 1186,
+        "before_rays": 58404,
+        "after_rays": 74491,
+        "strategy": "large_open_batch"
+      },
+      {
+        "case": "h034_n12_a09_c08_obstacles",
+        "before": 0.01822389999870211,
+        "after": 0.018591600004583597,
+        "before_nodes": 4119,
+        "after_nodes": 4119,
+        "before_rays": 31171,
+        "after_rays": 31171,
+        "strategy": "scalar_conservative"
+      },
+      {
+        "case": "h006_n05_a04_c08_open",
+        "before": 0.010703599997214042,
+        "after": 0.01098469999851659,
+        "before_nodes": 4113,
+        "after_nodes": 4113,
+        "before_rays": 13666,
+        "after_rays": 13666,
+        "strategy": "small_memory"
+      },
+      {
+        "case": "h015_n07_a05_c07_open",
+        "before": 0.011163800008944236,
+        "after": 0.01141490000009071,
+        "before_nodes": 4118,
+        "after_nodes": 4118,
+        "before_rays": 15005,
+        "after_rays": 15005,
+        "strategy": "small_memory"
+      },
+      {
+        "case": "h010_n06_a07_c06_obstacles",
+        "before": 0.0016879000031622127,
+        "after": 0.0019291999924462289,
+        "before_nodes": 552,
+        "after_nodes": 552,
+        "before_rays": 2479,
+        "after_rays": 2479,
+        "strategy": "small_memory"
+      },
+      {
+        "case": "h049_n16_a04_c04_obstacles",
+        "before": 0.0015742999967187643,
+        "after": 0.0017634999967413023,
+        "before_nodes": 145,
+        "after_nodes": 145,
+        "before_rays": 2609,
+        "after_rays": 2960,
+        "strategy": "medium_batch"
+      },
+      {
+        "case": "h137_n38_a07_c09_parity_unsat",
+        "before": 0.0002477000089129433,
+        "after": 0.00043160001223441213,
+        "before_nodes": 0,
+        "after_nodes": 0,
+        "before_rays": 0,
+        "after_rays": 0,
+        "strategy": "parity_reject"
+      },
+      {
+        "case": "h152_n42_a09_c05_parity_unsat",
+        "before": 0.0003875999973388389,
+        "after": 0.0005244000058155507,
+        "before_nodes": 0,
+        "after_nodes": 0,
+        "before_rays": 0,
+        "after_rays": 0,
+        "strategy": "parity_reject"
+      }
+    ]
+  }
+}

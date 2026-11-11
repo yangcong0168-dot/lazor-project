@@ -1,0 +1,48 @@
+{
+  "verified": true,
+  "crc_checked": true,
+  "sha256_checked": true,
+  "member_count": 12417,
+  "source_file_count": 12414,
+  "normalized_files": 13,
+  "input_counts": {
+    "full": 5997,
+    "fresh": 164
+  },
+  "journals": {
+    "baseline_search_1s.jsonl": {
+      "count": 5997,
+      "statuses": {
+        "solved": 3998,
+        "no_solution": 1999
+      }
+    },
+    "release_search_1s.jsonl": {
+      "count": 5997,
+      "statuses": {
+        "solved": 3998,
+        "no_solution": 1999
+      }
+    },
+    "fresh_baseline_search_1s.jsonl": {
+      "count": 164,
+      "statuses": {
+        "solved": 110,
+        "no_solution": 54
+      }
+    },
+    "fresh_release_search_1s.jsonl": {
+      "count": 164,
+      "statuses": {
+        "solved": 110,
+        "no_solution": 54
+      }
+    }
+  },
+  "frozen_source_files": 56,
+  "uncompressed_bytes": 42784279,
+  "archive": "lazor-validation.zip",
+  "bytes": 8429971,
+  "mib": 8.039,
+  "sha256": "9ba612eff1e1c93d6d2806b12cad0d0814db55eacaeda98be105d78110bae794"
+}

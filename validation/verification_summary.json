@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "full_suite": {
+    "count": 238,
+    "elapsed_seconds": 9.689,
+    "command": "python -m unittest discover -s tests -v",
+    "log": "outputs/adaptive_optimization/unittest_final.log",
+    "log_sha256": "0e1179edcd8f8785adfcf105d4b657aaea4ed464110daea101a90aa0cea31952"
+  },
+  "oracle_audits": {
+    "oracle_default_final_346.json": {
+      "file_sha256": "059cf619b87383a8865fd55701889cbe1d393b23b9a3885c927da14dcaba50db",
+      "candidate_trials": 346,
+      "status_counts": {
+        "solved": 71,
+        "no_solution": 275
+      },
+      "passed": true
+    },
+    "oracle_forced_batch_final_346.json": {
+      "file_sha256": "027aeeb6e07072098f40cff86d31c3b02c27dc0419f31418da8812199c94f569",
+      "candidate_trials": 346,
+      "status_counts": {
+        "solved": 71,
+        "no_solution": 275
+      },
+      "passed": true
+    },
+    "oracle_early_guidance_48.json": {
+      "file_sha256": "c5f99c6c25d0f14559099e39428b0da1f7348f78d99911a91c64fbb5aca78d6f",
+      "candidate_trials": 48,
+      "status_counts": {
+        "solved": 24,
+        "no_solution": 24
+      },
+      "passed": true
+    }
+  },
+  "independent_oracle_trials": 740,
+  "candidate_code_sha256": {
+    "__init__.py": "60f2db6383b07e2e147d41a4553d639332ae3bc1ade53679cab7b9e7d5c54b43",
+    "__main__.py": "a8e1a8cd58c85ad570cc598101ec50ba65ee533fc11cf47916c1b6ea1ca44e13",
+    "benchmark.py": "7428ce09b07cec049c0899abad6cfdece719747344abfcd9ebb1fed5088248d6",
+    "bff.py": "676653d42672934b19be2e5a7a42dc31d5d287c57056c6a8eaa21478a41d4d0b",
+    "bitboard.py": "7705a7f0a00728096bcc2f185c59bd6851557d4fc4209a7f21eba75a9bf6484c",
+    "compare_solvers.py": "0a33d1df0bc4e84f4cd30a179f615003e23e1f550d19dc72944b300a5d3e515b",
+    "dfs_baseline.py": "b8a7e585a7778b92bd7df832477734ebd2331bb76f7714935e6dfca5fad2833c",
+    "editor.py": "187b391b312a8a7022f8499269e29e24e23ce35a40579ace5508f9beffac3acc",
+    "editor_model.py": "755e6ef698785e52dab324ab71ccd3951c6d549aaa70b94e824c8b649caa164e",
+    "editor_runner.py": "a0c5d42ff95e6177d484c0a25101cb66df71b047f0ff63eeaa849896161a47ad",
+    "full_benchmark.py": "a187061299af09e62e8dd0f98e8d6f35410b9319f2822c4ad6208394232930ae",
+    "layout.py": "8037e30ca9aaec783d4af36691a715cfd4e8f2c55c4887d7a6f36496577dadf9",
+    "models.py": "f0d24006587a1a1026820b0c0011cf6114f1e18238453aa539ca536574d7b854",
+    "output.py": "70a4fa73441c26f6196a78048ed072b34e4e0ee01b0a8b51e763ec2fce67cae8",
+    "research_benchmark.py": "a60ec0b581ca4f09097cdfec3266f015f520b62a4f15baf2cc26ae6b05257af5",
+    "scaling.py": "ff38861bc14755dcdf5c948243c2742572a8bca95b5a84a900065c6afb3701f7",
+    "search.py": "664e6ae1674bbff2995f6359057f2c0f1c227115b65cec089f3ad71aede555f0",
+    "search_policy.py": "b6815ddb33f1298761afb3804fc3b71bba2715a4fb9cb08c042b53779de2385d",
+    "search_tables.py": "f393643e87bc7cb291dbdf163aeb5fb33c535ae5ff3bd8281002b56ef92d4905",
+    "simulation.py": "afeff70f511146fe2362e24679feb6b9a7cbef83ffaa122b29dcb7df01194704",
+    "solver.py": "4693156a9d34016d4fee86cf1f33f71faac84f31ccbda8f771dabb2c9415b7ab",
+    "table_database.py": "51e4b32e312527690f54923fb8bf1f7a04e1903b5b07700073d03a1cea6adbb1"
+  },
+  "frozen_root": "tmp/adaptive_release",
+  "production_equals_frozen": true,
+  "test_files_sha256": {
+    "__init__.py": "f0bac3e7497492e0f952100660099090fb4f1edcd2b59a199a066d532caa7c99",
+    "test_benchmark.py": "3159b4cc14e04e799606fbf7ed7562276079d277624608880bf53b34871b165b",
+    "test_bff.py": "6bd9f68aaf0bd38cc4b5613ecfa91c2fd92d80405147cb401f5d95e13a2237e0",
+    "test_cli.py": "e44cd9b4e93391395b8326845e818a00afcbc0f8f008461c3b0e075457d43d8f",
+    "test_compare_solvers.py": "7c2c79294141850bcb9c2f6216c6c19a74e28b64dd504451507652a44b26b280",
+    "test_dfs_baseline.py": "0a27e13f77f066326e89cf9b3b2a68abf65b125e0d691631fbd75773a10cd86e",
+    "test_editor_model.py": "de1665ace57a66b4f782fe29c1f5d40af1b573488345011408630d827bbc6d9d",
+    "test_editor_runner.py": "d984d29cb850a4b1c0165f621fb2dfbfad080debd07b38238502374d805568cc",
+    "test_editor_ui.py": "4527a22091c345a1d68aaba9a3aa8c0d0a11ede06686cefb64acbceb0de3ad19",
+    "test_full_benchmark.py": "4ec85c71ef8093a76daf01fd91b0baa6eafa4b1c304fe3dfacc9d678b881a9df",
+    "test_models.py": "2452ee55aee91cfa918f52e403061bf4e4bc55bc1ce8005260c17b76f0b8910d",
+    "test_output.py": "4e418a5b2e67b1dde66e4f903b004f052355ac54fde8c95b29bcc7d31c8de32a",
+    "test_research_benchmark.py": "0bad95e81958fcbe96a2c7c5f9c6dbb988ff9febb560cc91d1e556090e3b46f2",
+    "test_scaling.py": "8585750172aecf807a4eabafff79fe23abde311484254ceec344a27788f1aed7",
+    "test_search.py": "2c18d3173a006fbcac96e893325d79fd1ec59d7d757caa94102f2dd215737829",
+    "test_search_cli.py": "20730b6524f698be85828d7234527a7c2e5166e2cbf66f8bcc931d329d58582b",
+    "test_search_hotpath.py": "f7a0e97e20f5581104af4972172fc8d2503088caf0b9627a22aed3ce7ca1dfc1",
+    "test_search_policy.py": "299bae17a10346d2d8181d2794980662f142980de6d29d5bffbf6345774fe0f3",
+    "test_search_tables.py": "bf78cb853c01f07c258d0dac6bee66ed8dd7202e9fdbed776e074917f2cc911a",
+    "test_simulation.py": "28848f0271b0209c029406e9ea5375e33f3ae1758942ea2d527585d2c9c4b964",
+    "test_simulation_optimization.py": "f5060b35474cb57017805790d2aa905b4426c1443b52302e9994303427862dc8",
+    "test_solver.py": "71ccac839fc73da6e047fc1bdf5674fa4d5483b8224fa2122dfb4abba652fefd",
+    "test_solver_batching.py": "9b72fe25b4708fe51b4ed181c7c98dba2f392cc0a36ca569af8b42e242770b00",
+    "test_solver_optimization.py": "a3a9e5e0c514c354f4072697b0113da8b8b98b5684919822ea36859b4790f1ce",
+    "test_table_database.py": "aec3402a32847206c020ff76192b6b40f996112f27570ca1ff0660880b254f72"
+  },
+  "scope": "Correctness validation, not performance. Includes 346 default +346 forced batch/restarts +48 sparse boundary cases. 36 sparse cases use early-guidance classification;18 SAT explicitly reach guided stage;24 UNSAT add odd target outside all16 exact traces."
+}

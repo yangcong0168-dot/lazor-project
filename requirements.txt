@@ -1,0 +1,2 @@
+# Automatic state-transition constraint planning; simulation uses stdlib.
+z3-solver==5.3.3.0

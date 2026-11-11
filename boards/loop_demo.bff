@@ -1,0 +1,16 @@
+# Fixed mirrors form a closed ray loop around the center cell.
+# Created as an editor/loop-regression example, not a course benchmark.
+GRID START
+o A o
+A o A
+o A o
+GRID STOP
+
+A 0
+B 0
+C 0
+L 3 2 1 -1
+P 3 2
+P 4 3
+P 3 4
+P 2 3

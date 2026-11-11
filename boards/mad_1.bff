@@ -1,0 +1,21 @@
+# Transcribed from page 2 of Lazor_Group_Project_Fall_2026.pdf.
+# This is the example input, not a solved board or the full benchmark suite.
+GRID START
+o o o o
+o o o o
+o o o o
+o o o o
+GRID STOP
+
+# Movable blocks; unspecified kinds default to zero.
+A 2
+C 1
+
+# x y vx vy; the PDF contains one laser record.
+L 2 7 1 -1
+
+P 3 0
+P 4 3
+P 2 5
+P 4 7
+
