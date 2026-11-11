@@ -3,7 +3,7 @@
 import importlib
 import json
 from pathlib import Path
-importplatform
+import platform
 import shlex
 import struct
 import subprocess
